@@ -6,9 +6,9 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", link: "#" },
-    { name: "Shortener", link: "#shortener" },
-    { name: "History", link: "#history" },
-    { name: "Contact", link: "#contact" },
+    { name: "Shortener", link: "./src/components/Navbar.jsx" },
+    { name: "History", link: "./src/components/.jsx" },
+    { name: "Contact", link: "./src/components/Contact.jsx" },
   ];
 
   return (

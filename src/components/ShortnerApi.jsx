@@ -123,9 +123,21 @@ const ShortnerApi = () => {
         {/* History */}
         {history.length > 0 && (
           <div className="mt-8">
-            <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-4">
-              📜 History
-            </h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-white">
+                📜 History
+              </h2>
+              <button
+                onClick={() => {
+                  localStorage.removeItem("shortUrls");
+                  setHistory([]);
+                }}
+                className="px-3 py-1 bg-red-500 text-white text-sm rounded-lg hover:bg-red-600 transition"
+              >
+                Clear History
+              </button>
+            </div>
+
             <ul className="space-y-4">
               {history.map((item, index) => (
                 <li
@@ -133,7 +145,7 @@ const ShortnerApi = () => {
                   className="border border-gray-200 dark:border-gray-700 rounded-2xl p-4 hover:shadow-md transition-shadow duration-200 bg-white dark:bg-gray-900"
                 >
                   {/* Long URL */}
-                  <p className="text-gray-700 dark:text-gray-300 text-sm truncate">
+                  <p className="text-gray-700 dark:text-gray-300 text-sm truncate text-left">
                     {item.longUrl}
                   </p>
 
@@ -143,7 +155,7 @@ const ShortnerApi = () => {
                       href={item.shortUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 dark:text-blue-400 underline font-medium text-sm truncate max-w-[calc(100%-60px)]"
+                      className="text-blue-600 dark:text-blue-400 underline font-medium text-sm truncate max-w-[calc(100%-60px)] text-left"
                     >
                       {item.shortUrl}
                     </a>
@@ -159,6 +171,7 @@ const ShortnerApi = () => {
             </ul>
           </div>
         )}
+
 
       </div>
     </div>
