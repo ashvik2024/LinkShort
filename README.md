@@ -23,12 +23,3 @@ Easily shorten long URLs, copy them to the clipboard, and keep track of your URL
 - **TinyURL API** (URL shortening)  
 - **LocalStorage** (Persisting URL history)  
 
----
-
-## 📦 Installation
-
-1. **Clone the repository:**
-
-```bash
-git clone https://github.com/yourusername/link-shortener.git
-cd link-shortener
